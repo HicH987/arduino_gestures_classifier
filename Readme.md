@@ -2,8 +2,6 @@
 
 <!-- <img src="https://user-images.githubusercontent.com/62667537/207033575-91d463d7-9e63-4508-9255-d21490b800a0.png" width="200" height="120"> -->
 
-
-
 ## **1. Data Acquisition**
 
 In this part, we capture the data of 4 different movements with 2 hands and we copy the date in 8 csv files (4 for left hand and 4 for the right), the files are in `data` folder.
@@ -47,39 +45,51 @@ Here, we trained 2 neural network models, one for left hand and one for right. W
 
 The modifications:
 
-1.  Crafted useful functions
+- **Crafted useful functions**
 
-    ```python
-    def get_input_output(arr_gestures)
-    ```
+  ```python
+  def get_input_output(arr_gestures)
+  """
+  summary:
+      This function accepts the list of csv file names of one hand
+      (arr_gestures) and perform data preprocessing and
+      normalization and return inputs and outputs data
 
-    **summary**:
+  Args:
+      arr_gestures (list): list of gesture names
 
-    This function accepts the list of csv file names of one hand (arr_gestures) and perform data preprocessing and normalization and return inputs and outputs data
+  Returns:
+      inputs(numpy array): features set
+      outputs(numpy array): label set
+  """
+  ```
 
-    **Args**:
+  ```python
+  def splitted_data(inputs, outputs, train_split=0.6, test_split=0.2)
+  """
+  summary:
+      This function spilt the data (input & output) to inputs_train,
+      inputs_test, inputs_validate, outputs_train, outputs_test, 
+      outputs_validate.
 
-        arr_gestures (list): list of gesture names
+  Args:
+      inputs(numpy array): features set
+      outputs(numpy array): label set
 
-    **Returns**:
+  Returns:
+        inputs_train(numpy array): training data
+        inputs_test(numpy array):  test data
+        inputs_validate(numpy array): validation data
+        outputs_train(numpy array): training label
+        outputs_test(numpy array): test label
+        outputs_validate(numpy array): validation label
+  """
+  ```
 
-        inputs(numpy array): features set
-        outputs(numpy array): label set
+-  **Change Optimizer**
+  
+    We changed the optimization method of the model from `rmsprop` to `sgd`, because we had an overfitting with `rmsprop`.
 
-    ---
-    ```python
-    splitted_data(inputs, outputs, train_split=0.6, test_split=0.2)
-    ```
-
-    **summary**:
-
-    This function spilt the data (input & output) to inputs_train, inputs_test, inputs_validate, outputs_train, outputs_test, outputs_validate.
-
-    **Args**:
-
-          arr_gestures (list): list of gesture names
-
-    **Returns**:
-
-          inputs(numpy array): features set
-          outputs(numpy array): label set
+        `rmsprop` : is an optimization algorithm that accelerates the gradient descent.
+        
+        `sgd` : is the classical gradient descent
