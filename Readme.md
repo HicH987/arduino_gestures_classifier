@@ -4,7 +4,8 @@
 
 ```bash
 |_arduino_src
-|   |_Arduino_TensorFlowLite # tenserflowlite library for arduino, this folder must be copied into the arduino library folder
+|   |_Arduino_TensorFlowLite # tenserflowlite library for arduino, this folder must be copied into 
+|   |			     # the arduino library folder
 |   |
 |   |_IMU_Capture
 |   |   |_IMU_Capture.ino # arduino code that capture hand gesture data
