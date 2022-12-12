@@ -193,13 +193,13 @@ After the prediction the sender will transmit the predicted index to the receive
 // array of gestures index char
 char gestures_idx[4] = {'0', '1', '2', '3'};
 
-// gestures_idx declared as global variable
+-> gestures_idx declared as global variable
 ```
 ```c++
 // send the index of the left gesture to the right arduino
 Serial1.print(gestures_idx[argMax]);
 
-// argMax is the index of the gesture with the highest prediction rate
+-> argMax is the index of the gesture with the highest prediction rate
 ```
 
 The receiver will receive this index and convert it to `int` and then compare it with its own predicted index as shown in the example below.
