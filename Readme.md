@@ -13,11 +13,13 @@
 |   |_IMU_Classifier
 |   | |_Receiver
 |   | | |_model_R.h # right hand model
-|   | | |_Receiver.ino # arduino code that do the classification to right hand and recive
+|   | | |_Receiver.ino # arduino code that does the classification with the right hand and receives 
+|   | |                  the result from the left hand and compares it with its own result.
 |   | |
 |   | |_Sender
 |   | | |_model_L.h # left hand model
-|   | | |_Sender.ino
+|   | | |_Sender.ino # arduino code that does the classification of the left hand and sends its result 
+|   | |                to the other arduino
 |
 |_data # left and right hand gestures data
 |   |_clap_L.csv
