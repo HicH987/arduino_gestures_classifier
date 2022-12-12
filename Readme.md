@@ -41,7 +41,7 @@ The gestures performed are:
 
 ## **2. Training of The 2 Models**
 
-Here, we trained 2 neural network models, one for left hand and one for right. We reuse the provided code, and we applied some modification to get 2 models in one run.
+Here, we trained 2 neural network models, one for left hand and one for right. We reuse the provided code, and we applied some modification to get 2 models `[model_R.h & model_L.h]` in one run, and we also changed the training optimizer to `sgd` (gradient descent) to avoid overfilling.
 
 The modifications:
 
@@ -102,5 +102,20 @@ The modifications:
   # gradient decent initialization
   sgd = SGD(learning_rate=learn_rate, momentum=0.9, nesterov=False)
 
-   model.compile(optimizer=sgd, loss="categorical_crossentropy", metrics=["accuracy"])
+  model.compile(optimizer=sgd, loss="categorical_crossentropy", metrics=["accuracy"])
   ```
+
+  After the training we get 2 models with the following accuracy:
+  - Right model:
+   ```cmd
+   Test loss: 0.01
+   Test accuracy: 0.98
+   ```
+  - Left model:
+
+   ```cmd
+   Test loss: 0.015
+   Test accuracy: 0.97
+   ```
+
+At the end of the notebook execution we will have the two models `[model_R.h & model_L.h]` as final result 
