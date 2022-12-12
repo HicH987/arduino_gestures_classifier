@@ -15,7 +15,7 @@ In this project, we have realized a motion detection of two hands using two `Ard
 |   |_IMU_Classifier
 |   | |_Receiver
 |   | | |_model_R.h # right hand model
-|   | | |_Receiver.ino # arduino code that does the classification with the right hand and receives 
+|   | | |_Receiver.ino # arduino code that does the classification of the right hand and receives 
 |   | |                # the result from the left hand and compares it with its own result.
 |   | |
 |   | |_Sender
