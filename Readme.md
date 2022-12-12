@@ -1,5 +1,7 @@
 # Arduino 2 Hands Gestures Classification
 
+In this project, we have realized a motion detection of two hands using two `Arduino nano BLE 33`. The objective is to acquire the data of the gyroscope of the two arduino by applying 4 gestures chosen with the 2 hands, then train the model with these data and use it for the classification of the gestures. A cable connection between the two arduino has been made to use the `UART` method in order to send a data from one arduino to another during the classification step.
+
 ## **Project Files**
 
 ```bash
@@ -34,10 +36,6 @@
 |_creation_two_models.ipynb # notebook use to train and create the 2 models
 
 ```
-
-## **0. Intro**
-
-In this project, we have realized a motion detection of two hands using two `Arduino nano BLE 33`. The objective is to acquire the data of the gyroscope of the two arduino by applying 4 gestures chosen with the 2 hands, then train the model with these data and use it for the classification of the gestures. A cable connection between the two arduino has been made to use the `UART` method in order to send a data from one arduino to another during the classification step.
 
 ## **1. Data Acquisition**
 
