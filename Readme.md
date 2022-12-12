@@ -83,6 +83,7 @@ The modifications:
 - **Add Open in Colab Button**
  
     <a href="https://colab.research.google.com/github/HicH987/arduino_gestures_classifier/blob/master/creation_two_models.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> added in `creation_two_models.ipynb`
+
 - **Upload csv in Colab**
   
   We add this code below to automaticly upload the data (8 csv files) from github to colab
