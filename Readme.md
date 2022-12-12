@@ -80,12 +80,17 @@ The gestures performed are:
 Here, we trained 2 neural network models, one for left hand and one for right. We reuse the provided code, and we applied some modification to get 2 models `[model_R.h & model_L.h]` in one run, and we also changed the training optimizer to `sgd` (gradient descent) to avoid overfilling.
 
 The modifications:
-- **upload csv in colab**
+- **Add Open in Colab Button**
+ 
+    <a href="https://colab.research.google.com/github/HicH987/arduino_gestures_classifier/blob/master/creation_two_models.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> added in `creation_two_models.ipynb`
+- **Upload csv in Colab**
+  
   We add this code below to automaticly upload the data (8 csv files) from github to colab
   ```python
   # https://github.com/HicH987/arduino_gestures_classifier/tree/master/data
   !npx degit HicH987/arduino_gestures_classifier/data -f 
   ```
+
 - **Crafted useful functions**
 
   ```python
