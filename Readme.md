@@ -18,22 +18,22 @@ The gestures performed are:
     <tr>
         <td>Clap</td>
         <td>39</td>
-        <td>clap_R.csv, clap_L.csv </td>
+        <td>clap_R.csv,<br>clap_L.csv </td>
     </tr>
     <tr>
         <td>Hi</td>
         <td>39</td>
-        <td>hi_R.csv, hi_L.csv </td>
+        <td>hi_R.csv,<br>hi_L.csv </td>
     </tr>
     <tr>
         <td>Up</td>
         <td>22</td>
-        <td>up_R.csv, up_L.csv </td>
+        <td>up_R.csv,<br>up_L.csv </td>
     </tr>
     <tr>
         <td>Down</td>
         <td>20</td>
-        <td>down_R.csv, down_L.csv </td>
+        <td>down_R.csv,<br>down_L.csv </td>
     </tr>
     </tbody>
 </table>
@@ -65,11 +65,11 @@ The modifications:
   ```
 
   ```python
-  def splitted_data(inputs, outputs, train_split=0.6, test_split=0.2)
+  def splitter_data(inputs, outputs, train_split=0.6, test_split=0.2)
   """
   summary:
       This function spilt the data (input & output) to inputs_train,
-      inputs_test, inputs_validate, outputs_train, outputs_test, 
+      inputs_test, inputs_validate, outputs_train, outputs_test,
       outputs_validate.
 
   Args:
@@ -77,19 +77,30 @@ The modifications:
       outputs(numpy array): label set
 
   Returns:
-        inputs_train(numpy array): training data
-        inputs_test(numpy array):  test data
-        inputs_validate(numpy array): validation data
-        outputs_train(numpy array): training label
-        outputs_test(numpy array): test label
-        outputs_validate(numpy array): validation label
+      inputs_train(numpy array): training data
+      inputs_test(numpy array):  test data
+      inputs_validate(numpy array): validation data
+      outputs_train(numpy array): training label
+      outputs_test(numpy array): test label
+      outputs_validate(numpy array): validation label
   """
   ```
 
--  **Change Optimizer**
-  
-    We changed the optimization method of the model from `rmsprop` to `sgd`, because we had an overfitting with `rmsprop`.
+- **Change Optimizer**
 
-        `rmsprop` : is an optimization algorithm that accelerates the gradient descent.
-        
-        `sgd` : is the classical gradient descent
+  We changed the optimization method of the model from `rmsprop` to `sgd`, because we had an overfitting with `rmsprop`.
+
+  - `rmsprop` : is an optimization algorithm that accelerates the gradient descent.
+  - `sgd` : is the classical gradient descent
+
+  We have also modified the metric used to evaluate the models to `accuracy`.
+
+  ```python
+  # learning rate
+  learn_rate = 0.001
+
+  # gradient decent initialization
+  sgd = SGD(learning_rate=learn_rate, momentum=0.9, nesterov=False)
+
+   model.compile(optimizer=sgd, loss="categorical_crossentropy", metrics=["accuracy"])
+  ```
