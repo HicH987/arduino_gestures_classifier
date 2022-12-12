@@ -78,12 +78,15 @@ The gestures performed are:
 
 ## **2. Training of The 2 Models**
 
-Here, we trained 2 neural network models, one for left hand and one for right. We reuse the provided code, and we applied some modification to get 2 models `[model_R.h & model_L.h]` in one run, and we also changed the training optimizer to `sgd` (gradient descent) to avoid overfilling.
+Here, we trained 2 neural network models, one for left hand and one for right. We reuse the provided code, and we applied some modification to get 2 models `[model_R.h & model_L.h]` in one run. 
 
-The modifications:
+We also changed the training optimizer to `sgd` (gradient descent) to avoid overfilling.
+
+The modifications are as follows:
+
 - **Add Open in Colab Button**
  
-    <a href="https://colab.research.google.com/github/HicH987/arduino_gestures_classifier/blob/master/creation_two_models.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> added in `creation_two_models.ipynb`
+    <a href="https://colab.research.google.com/github/HicH987/arduino_gestures_classifier/blob/master/creation_two_models.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> added in `creation_two_models.ipynb` to open the notebook directly in google colab.
 
 - **Upload csv in Colab**
   
@@ -95,6 +98,8 @@ The modifications:
 
 - **Crafted useful functions**
 
+  Those functions were made to avoid repeating the execution of the notebook 2 time 
+  
   ```python
   def get_input_output(arr_gestures)
   """
@@ -133,7 +138,7 @@ The modifications:
       outputs_validate(numpy array): validation label
   """
   ```
-
+  
 - **Change Optimizer**
 
   We changed the optimization method of the model from `rmsprop` to `sgd`, because we had an overfitting with `rmsprop`.
