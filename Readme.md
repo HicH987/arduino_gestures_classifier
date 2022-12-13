@@ -33,7 +33,7 @@ In this project, we have realized a motion detection of two hands using two `Ard
 |   |_up_L.csv
 |   |_up_R.csv
 |
-|_creation_two_models.ipynb # notebook use to train and create the 2 models
+|_two_models_creation.ipynb # notebook use to train and create the 2 models
 
 ```
 
@@ -86,7 +86,7 @@ The modifications are as follows:
 
 - **Add Open in Colab Button**
  
-    <a href="https://colab.research.google.com/github/HicH987/arduino_gestures_classifier/blob/master/creation_two_models.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> added in `creation_two_models.ipynb` to open the notebook directly in google colab.
+    <a href="https://colab.research.google.com/github/HicH987/arduino_gestures_classifier/blob/master/two_models_creation.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> added in `two_models_creation.ipynb` to open the notebook directly in google colab.
 
 - **Upload csv in Colab**
   
